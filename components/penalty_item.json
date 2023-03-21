@@ -1,0 +1,607 @@
+{   
+    "BlockType" : "stack",       
+    "Padding" : "24,12,24,12",
+    "Orientation" : "Vertical",
+    "Spacing" : 16,
+
+    "Items" :
+    [
+
+        //Issuer
+        {
+            "BlockType": "stack",
+            "Orientation": "Vertical",
+            "VerticalAlignment": "Center",
+            "RenderIf" : "<{Penalty.Offense, Converter=EmptyObjectToFalse}>",
+            "Items" :
+            [ 
+                //Stewards Header
+                {
+                    "Name": "headerLeftPart",
+                    "BlockType": "stack",
+                    "Orientation": "Horizontal",
+                    "Spacing": 12,
+                    "Items": [
+                        //From/To
+                        {
+                            "BlockType": "stack",
+                            "VerticalAlignment": "Center",
+                            "HorizontalAlignment": "Left",
+                            "Orientation":"Vertical",
+                            "Spacing": 12,
+                            "Items": [
+                                //From
+                                {
+                                    "BlockType": "stack",
+                                    "VerticalAlignment": "Center",
+                                    "HorizontalAlignment": "Left",
+                                    "Orientation":"Horizontal",
+                                    "Spacing": 12,
+                                    "Items": [
+                                        {
+                                        "Name":"From",
+                                        "BlockType":"text",
+                                        "Source": "From",
+                                        "FontName": "{Formula1-Bold}",
+                                        "Foreground" : "{BlackText}",                                     
+                                        "FontSize": 28
+                                        },
+                                        {
+                                            "Name":"From Issuer",
+                                            "BlockType":"text",
+                                            "MarginLeft": 15,
+                                            "Source": "{Item.Issuer.Name}",
+                                            "FontName": "{FontNameDefault}",
+                                            "Foreground" : "{BlackText}",                                     
+                                            "FontSize": 28
+                                        },
+                                    ]
+                                },
+                                {
+                                    "BlockType": "stack",
+                                    "VerticalAlignment": "Center",
+                                    "HorizontalAlignment": "Left",
+                                    "Orientation":"Horizontal",
+                                    "Spacing": 12,
+                                    "Items": [
+                                        //To
+                                        {
+                                            "BlockType": "stack",
+                                            "VerticalAlignment": "Center",
+                                            "HorizontalAlignment": "Left",
+                                            "Orientation":"Horizontal",
+                                            "Spacing": 12,
+                                            "Items": [
+                                                {
+                                                "Name":"to",
+                                                "BlockType":"text",
+                                                "Source": "To",
+                                                "FontName": "{Formula1-Bold}",
+                                                "Foreground" : "{BlackText}",                                     
+                                                "FontSize": 28
+                                                },
+                                                {
+                                                "Name":"Team",
+                                                "BlockType":"text",
+                                                "MarginLeft": 55,
+                                                "Source": "The Team Manager, <{Penalty.Team.FullName}>",
+                                                "FontName": "{FontNameDefault}",
+                                                "Foreground" : "{BlackText}",                                     
+                                                "FontSize": 28,
+                                                "Triggers":
+                                                [
+                                                    {
+                                                        "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                                        "Property" : "Source",
+                                                        "Value" : "Reservist"
+                                                    },
+                                                ]
+                                                },
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                            
+                        //Doc/Date
+                        {
+                            "BlockType": "stack",
+                            "VerticalAlignment": "Center",
+                            "HorizontalAlignment": "Left",
+                            "Orientation":"Vertical",
+                            "MarginLeft": 900,
+                            "Spacing": 12,
+                            "Items": [
+                                //Doc
+                                {
+                                    "BlockType": "stack",
+                                    "VerticalAlignment": "Center",
+                                    "HorizontalAlignment": "Left",
+                                    "Orientation":"Horizontal",
+                                    "Spacing": 12,
+                                    "Items": [
+                                        {
+                                        "Name":"Doc",
+                                        "BlockType":"text",
+                                        "Source": "{StewardReportType}",
+                                        "FontName": "{Formula1-Bold}",
+                                        "Foreground" : "{BlackText}",                                     
+                                        "FontSize": 28
+                                        },
+                                        {
+                                            "Name":"ID#",
+                                            "BlockType":"text",
+                                            "MarginLeft": 73,
+                                            "Source": "{Item.PenaltyId}",
+                                            "FontName": "{FontNameDefault}",
+                                            "Foreground" : "{BlackText}",                                     
+                                            "FontSize": 28
+                                        },
+                                    ]
+                                },
+                                //Date
+                                {
+                                    "BlockType": "stack",
+                                    "VerticalAlignment": "Center",
+                                    "HorizontalAlignment": "Left",
+                                    "Orientation":"Horizontal",
+                                    "Spacing": 12,
+                                    "Items": [
+                                        {
+                                        "Name":"Date",
+                                        "BlockType":"text",
+                                        "Source": "Date",
+                                        "FontName": "{Formula1-Bold}",
+                                        "Foreground" : "{BlackText}",                                     
+                                        "FontSize": 28
+                                        },
+                                        {
+                                            "Name":"dmy",
+                                            "BlockType":"text",
+                                            "MarginLeft": 105,
+                                            "Source": "{Event.Date, Converter=DateToDayOfMonth} {Event.Date, Converter=DateToMonthInWords} {Event.Date, Converter=DateToYear}",
+                                            "FontName": "{FontNameDefault}",
+                                            "Foreground" : "{BlackText}",                                     
+                                            "FontSize": 28
+                                        },
+                                    ]
+                                }
+                            ]
+                        },
+
+                    ]
+                }
+            ]
+        },
+        //separator
+        {
+            "Name": "separator",
+            "RenderIf" : "{Event, Converter=EmptyObjectToFalse}",
+            "BlockType": "image",
+            "MarginTop": 50,
+            "MarginLeft": 4,
+            "MarginRight": 4,
+            "MarginBottom": 24,
+            "Width": "*",
+            "Background": "#000000",
+            "Source": "separator.png"
+        },
+        {
+            "BlockType": "stack",
+            "Orientation" : "Vertical",
+            "Margin" : "0,0,0,0",
+            "RenderIf" : "<{Penalty.Offense, Converter=EmptyObjectToFalse}>",
+            "Items" :
+            [
+                //into
+                {
+                    "Name":"Intro",
+                    "BlockType":"text",
+                    "HorizontalAlignment": "Left",
+                    "Source": "The Stewards, having recieved an incident submital, have considered the following matter and determine the following:",
+                    "FontName": "{FontNameDefault}",
+                    "Foreground" : "{BlackText}",                                     
+                    "FontSize": 28
+                },
+                //Driver
+                {
+                    "BlockType": "stack",
+                    "Orientation" : "Horizontal",
+                    "Margin" : "0,50,0,0",
+                    "RenderIf" : "<{Penalty.Offense, Converter=EmptyObjectToFalse}>",
+                    "Items" :
+                    [
+                        {
+                            "BlockType": "text",                   
+                            "Source" : "No / Driver",
+                            "Width" : "*", 
+                            //"MarginRight" : 16,                                  
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Top",
+                            "FontName": "{Formula1-Bold}",
+                            "Foreground" : "{BlackText}",                                     
+                            "FontSize": 28
+                        },
+                        {
+                            "BlockType": "text",
+                            "MaxWidth": 1400, 
+                            "Height": "*",     
+                            "MarginLeft": 50,                            
+                            "Source": "{Item.Driver.RaceNumber} [-] ",                    
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Top",
+                            "FontName": "{FontNameDefault}",
+                            "Foreground" : "{BlackText}",                   
+                            "FontSize": 28,
+                            "TextOptions" : 
+                            {
+                                "Wrap" : false
+                            }
+                        },
+                        {
+                            "BlockType": "text",
+                            "MaxWidth": 1400, 
+                            "Height": "*",                                  
+                            "Source": "<{Penalty.Driver.Name}>",                    
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Top",
+                            "FontName": "{FontNameDefault}",
+                            "Foreground" : "{BlackText}",                   
+                            "FontSize": 28,
+                            "TextOptions" : 
+                            {
+                                "Wrap" : false
+                            }
+                        }
+                    ]
+                },
+                //Competitor
+                {
+                    "BlockType": "stack",
+                    "Orientation" : "Horizontal",
+                    "Margin" : "0,50,0,0",
+                    "RenderIf" : "<{Penalty.Offense, Converter=EmptyObjectToFalse}>",
+                    "Items" :
+                    [
+                        {
+                            "BlockType": "text",                   
+                            "Source" : "Competitor",
+                            "Width" : "*",                               
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Top",
+                            "FontName": "{Formula1-Bold}",
+                            "Foreground" : "{BlackText}",                                     
+                            "FontSize": 28
+                        },
+
+                        {
+                            "BlockType": "text",
+                            "MaxWidth": 1400, 
+                            "Height": "*",     
+                            "MarginLeft":40,                             
+                            "Source": "<{Penalty.Team.FullName}>",                    
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Top",
+                            "FontName": "{FontNameDefault}",
+                            "Foreground" : "{BlackText}",                   
+                            "FontSize": 28,
+                            "TextOptions" : 
+                            {
+                                "Wrap" : false
+                            },
+                            "Triggers":
+                            [
+                                {
+                                    "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                    "Property" : "Source",
+                                    "Value" : "Reservist"
+                                },
+                            ]
+                        }
+                    ]
+                },
+                //Session
+                {
+                    "BlockType": "stack",
+                    "Orientation" : "Horizontal",
+                    "Margin" : "0,50,0,0",
+                    "RenderIf" : "<{Penalty.Offense, Converter=EmptyObjectToFalse}>",
+                    "Items" :
+                    [
+                        {
+                            "BlockType": "text",                   
+                            "Source" : "Session",
+                            "Width" : "*", 
+                            //"MarginRight" : 16,                                  
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Top",
+                            "FontName": "{Formula1-Bold}",
+                            "Foreground" : "{BlackText}",                                     
+                            "FontSize": 28
+                        },
+                        {
+                            "BlockType": "text",
+                            "MaxWidth": 1400, 
+                            "Height": "*",
+                            "MarginLeft": 95,                                      
+                            "Source": "<{Penalty.SessionResult.SessionType}>",                    
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Top",
+                            "FontName": "{FontNameDefault}",
+                            "Foreground" : "{BlackText}",                   
+                            "FontSize": 28,
+                            "TextOptions" : 
+                            {
+                                "Wrap" : true
+                            }
+                        }
+                    ]
+                },
+                //Offence
+                {
+                    "BlockType": "stack",
+                    "Orientation" : "Horizontal",
+                    "Margin" : "0,50,0,0",
+                    "RenderIf" : "<{Penalty.Offense, Converter=EmptyObjectToFalse}>",
+                    "Items" :
+                    [
+                        {
+                            "BlockType": "text",                   
+                            "Source" : "Offence",
+                            "Width" : "*",                                 
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Top",
+                            "FontName": "{Formula1-Bold}",
+                            "Foreground" : "{BlackText}",                                     
+                            "FontSize": 28
+                        },
+                        {
+                            "BlockType": "text",
+                            "MaxWidth": 1400, 
+                            "Height": "*",
+                            "MarginLeft": 95,                                      
+                            "Source": "<{Penalty.Offense}> ",                    
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Top",
+                            "FontName": "{FontNameDefault}",
+                            "Foreground" : "{BlackText}",                   
+                            "FontSize": 28,
+                            "TextOptions" : 
+                            {
+                                "Wrap" : false
+                            },
+                        },
+                        {
+                            "BlockType": "text",
+                            "MaxWidth": 1400, 
+                            "MarginTop" : 4,
+                            "Height": "*",                                   
+                            "Source": "involving driver(s) <{Penalty.DriversInvolvedString}> ",                    
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Top",
+                            "FontName": "{FontNameDefault}",
+                            "Foreground" : "{BlackText}",                   
+                            "FontSize": 28,
+                            "TextOptions" : 
+                            {
+                                "Wrap" : false
+                            },
+                        },
+                        {
+                            "BlockType": "text",
+                            "MaxWidth": 1400, 
+                            "MarginTop":4,
+                            "Height": "*",                                  
+                            "Source": "in turn <{Penalty.Turn}> ",                    
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Top",
+                            "FontName": "{FontNameDefault}",
+                            "Foreground" : "{BlackText}",                   
+                            "FontSize": 28,
+                            "TextOptions" : 
+                            {
+                                "Wrap" : false
+                            },
+                            "RenderIf" : "<{Penalty.Turn, Converter=EmptyObjectToFalse}>",
+                        },
+                        {
+                            "BlockType": "text",
+                            "MaxWidth": 1400, 
+                            "Height": "*",    
+                            "MarginTop" : 4,                              
+                            "Source": "on lap <{Penalty.Lap}>",                    
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Top",
+                            "FontName": "{FontNameDefault}",
+                            "Foreground" : "{BlackText}",                   
+                            "FontSize": 28,
+                            "TextOptions" : 
+                            {
+                                "Wrap" : false
+                            }
+                        },
+                    ]
+                },
+                //Decision
+                {
+                    "BlockType": "stack",
+                    "Orientation" : "Horizontal",
+                    "Margin" : "0,50,0,0",
+                    "RenderIf" : "<{Penalty.Offense, Converter=EmptyObjectToFalse}>",
+                    "Items" :
+                    [
+                        {
+                            "BlockType": "text",                   
+                            "Source" : "Decision",
+                            "Width" : "*", 
+                            //"MarginRight" : 16,                                  
+                            "HorizontalAlignment": "Left",
+                            "VerticalAlignment": "Top",
+                            "FontName": "{Formula1-Bold}",
+                            "Foreground" : "{BlackText}",                                     
+                            "FontSize": 28
+                        },
+                        {
+                            "BlockType": "stack",
+                            "VerticalAlignment": "Center",
+                            "HorizontalAlignment": "Left",
+                            "Orientation":"Horizontal",
+                            "MarginLeft": 85,
+                            "Spacing": 12,
+                            "Items": [
+                                            //pp
+                                            {
+                                                "BlockType": "text",                                   
+                                                "Source": "<{Penalty.PenaltyPoints, Converter=NumberToSignedString}> Penalty Point",
+                                                "RenderIf" : "<{Penalty.PenaltyPoints, Converter=NumberIsNotZero}>",
+                                                "HorizontalAlignment": "Left",
+                                                "VerticalAlignment": "Center",
+                                                "FontName": "{FontNameDefault}",
+                                                "Foreground" : "#CE4545",
+                                                "FontSize": 28
+                                            },
+
+                                            //warning
+                                            {
+                                                "BlockType": "text",                                
+                                                "Source": "+W",
+                                                "RenderIf" : "<{Penalty.PenaltyWarnings, Converter=NumberIsNotZero}>",
+                                                "HorizontalAlignment": "Left",
+                                                "VerticalAlignment": "Center",
+                                                "FontName": "{FontNameDefault}",
+                                                "Foreground" : "#CE4545",
+                                                "FontSize": 28
+                                            },
+
+                                            //pen. time
+                                            {
+                                                "BlockType": "text",                               
+                                                "Source": "<{Penalty.PenaltySeconds, Converter=NumberToSignedString}> sec. time penalty",
+                                                "RenderIf" : "<{Penalty.PenaltySeconds, Converter=NumberIsNotZero}>",
+                                                "HorizontalAlignment": "Left",
+                                                "VerticalAlignment": "Center",
+                                                "FontName": "{FontNameDefault}",
+                                                "Foreground" : "#C07373",
+                                                "FontSize": 28
+                                            },
+
+                                            //pen. pos
+                                            {
+                                                "BlockType": "text",                                
+                                                "Source": "<{Penalty.PenaltyPositions, Converter=NumberToSignedString}> pos. grid drop",
+                                                "RenderIf" : "<{Penalty.PenaltyPositions, Converter=NumberIsNotZero}>",
+                                                "HorizontalAlignment": "Left",
+                                                "VerticalAlignment": "Center",
+                                                "FontName": "{FontNameDefault}",
+                                                "Foreground" : "{BlackText}",
+                                                "FontSize": 28
+                                            },
+                                            {
+                                                "BlockType": "text",                               
+                                                "Source": "<{Penalty.PenaltyActionString}>",
+                                                "RenderIf" : "<{Penalty.IsAction}>",
+                                                "HorizontalAlignment": "Left",
+                                                "VerticalAlignment": "Center",
+                                                "FontName": "{FontNameDefault}",
+                                                "Foreground" : "#D53131",
+                                                "FontSize": 28
+                                            },
+                            
+                                            {
+                                                "BlockType": "text",
+                                                "MaxWidth": 600,                    
+                                                "Source": "(<{Penalty.PenaltyActionValue}>)",
+                                                "RenderIf" : "<{Penalty.PenaltyActionValue, Converter=NumberIsNotZero}>",
+                                                "HorizontalAlignment": "Left",
+                                                "VerticalAlignment": "Center",
+                                                "FontName": "{FontNameDefault}",
+                                                "Foreground" : "#D53131",
+                                                "FontSize": 28
+                                            },
+                                            //no penalty
+                                            {
+                                                "BlockType": "text",                                   
+                                                "Source": "NO FUTHER ACTION",
+                                                "RenderIf" : "<{Penalty.IsNoPunishment}>",
+                                                "HorizontalAlignment": "Left",
+                                                "VerticalAlignment": "Center",
+                                                "FontName": "{FontNameDefault}",
+                                                "Foreground" : "#45CE45",
+                                                "Padding" : "16",
+                                                "FontSize": 28
+                                            },
+                                ]        
+                            }
+                        ]
+                    },
+                    //description line
+                    {
+                        "BlockType": "stack",
+                        "Orientation" : "Horizontal",
+                        "Margin" : "0,50,0,0",
+                        "RenderIf" : "<{Penalty.Description, Converter=EmptyObjectToFalse}>",
+                        "Items" :
+                        [
+                            {
+                                "BlockType": "text",                   
+                                "Source" : "Details",
+                                "Width" : 150,                               
+                                "HorizontalAlignment": "Left",
+                                "VerticalAlignment": "Top",
+                                "FontName": "{Formula1-Bold}",
+                                "Foreground" : "{BlackText}",                                     
+                                "FontSize": 28
+                            },
+
+                            {
+                                "BlockType": "text",
+                                "MaxWidth": 1400, 
+                                "Height": "*",
+                                "MarginLeft":80,                                  
+                                "Source": "<{Penalty.Description}>",                    
+                                "HorizontalAlignment": "Left",
+                                "VerticalAlignment": "Top",
+                                "FontName": "{FontNameDefault}",
+                                "Foreground" : "{BlackText}",                   
+                                "FontSize": 28,
+                                "TextOptions" : 
+                                {
+                                    "Wrap" : true
+                                }
+                            }
+                        ]
+                    },
+
+                ]
+            },
+            {
+                "BlockType": "text",                   
+                "Source" : "The Stewards",
+                "MarginTop": 50,
+                "Width" : "*",                                 
+                "HorizontalAlignment": "Left",
+                "VerticalAlignment": "Top",
+                "FontName": "{Formula1-Bold}",
+                "Foreground" : "{BlackText}",                                     
+                "FontSize": 28
+            },
+            //separator
+            {
+                "Name": "separator",
+                "RenderIf" : "{Event, Converter=EmptyObjectToFalse}",
+                "BlockType": "image",
+                "MarginTop": 75,
+                "MarginLeft": 4,
+                "MarginRight": 4,
+                "MarginBottom": 0,
+                "Width": "*",
+                "Background": "{BlackText}",
+                "Source": "separator.png"
+            }
+        ]
+    }
+
+                
+
+        

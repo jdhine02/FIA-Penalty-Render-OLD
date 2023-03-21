@@ -1,0 +1,139 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",
+        "Orientation": "Vertical",
+        "Items": [
+            //event info
+            {
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "MarginBottom" : 24,
+                "RenderIf" : "{Event, Converter=EmptyObjectToFalse}",
+                "Items": [
+                    //header
+                    {
+                        "Name": "headerLeftPart",
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "Spacing": 12,
+                        "HorizontalAlignment": "Center",
+                        "Items": [
+                            //league name
+                            {
+                                "BlockType": "stack",
+                                "VerticalAlignment": "Center",
+                                "Items": [
+                                    {
+                                        "Name":"LeagueLogo",
+                                        "BlockType":"image",
+                                        "Height":88,
+                                        "Width":"auto",
+                                        "HorizontalAlignment" : "Center",
+                                        "Source": "{Season.LeagueInfo.LeagueLogo}",
+                                        "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToFalse}"
+                                    },
+                                    {
+                                    "BlockType": "stack",
+                                    "Orientation":"Vertical",
+                                    "VerticalAlignment": "Center",
+                                    "MarginLeft": 20,
+                                    "Items": [
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Season.LeagueInfo.LeagueName}",
+                                                "FontName": "{FontNameWide}",
+                                                "Foreground":"{BlackText}",
+                                                "FontSize": 30
+                                            },
+                                            {
+                                                "BlockType": "text",
+                                                "Source": "{Season.Name}",
+                                                "VerticalAlignment": "Center",
+                                                "FontName": "{FontNameWide}",
+                                                "FontSize": 25,
+                                                "Foreground": "{BlackText}"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+
+                            //session
+                            {
+                                "Name": "headerSessionLine",
+                                "BlockType": "stack",
+                                "VerticalAlignment": "Center",
+                                "Orientation": "Vertical",
+                                "Spacing": 8,
+                                "Items": [
+
+                                    {
+                                        "Name": "CountryName",
+                                        "BlockType": "text",
+                                        "MarginLeft": 12,
+                                        "VerticalAlignment": "Center",
+                                        "Source": "[{Event.Track.CircuitName} Grand Prix]",
+                                        "TextOptionsExtern": "CountryName",
+                                        "FontName": "{FontNameWide}",
+                                        "Foreground":"{#FF1801}",
+                                        "FontSize": 35
+                                    },
+
+                                    {
+                                        "Name": "LocationName",
+                                        "BlockType": "text",
+                                        "HorizontalAlignment" :"Center",
+                                        "VerticalAlignment": "Center",
+                                        "Source": "{Event.Date, Converter=DateToDayOfMonth} {Event.Date, Converter=DateToMonthInWords} {Event.Date, Converter=DateToYear}",
+                                        "FontName": "{FontNameWide}",
+                                        "FontSize": 18,
+                                        "Foreground": "{BlackText}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+
+            //separator
+            {
+                "Name": "separator",
+                "RenderIf" : "{Event, Converter=EmptyObjectToFalse}",
+                "BlockType": "image",
+                "MarginTop": 4,
+                "MarginLeft": 4,
+                "MarginRight": 4,
+                "MarginBottom": 24,
+                "Width": "*",
+                "Background": "#000000",
+                "Source": "separator.png"
+            },
+            
+
+            //penalties
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "Spacing": 48,
+                "ItemStackOptions": {
+                    "ItemSource": "{Penalties.Penalties}",
+                    "Template": {
+                        "BlockType": "component",
+                        "Width" : "*",
+                        "Background" : "#09FFFFFF",
+                        "ComponentName": "penalty_item",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "Penalty": "{Item}"
+                            }
+                        }
+                    }
+                }
+            },
+            
+        ]
+    }
+}
