@@ -5,6 +5,6 @@
 3) Copy the the last line of the public_vars code "StewardReportType" : "Report" and place it into your public_vars file
 4) Copy the Grand Prix lines of code from the localization file and place into your localization file
 
-Steward Report Type can be changes, but you will need to edit "MarginLeft" of code line 135 in the penalty_item component.
-
-The Grand Prix Names are also customizable on the right of the ":" section of localization.
+-Steward Report Type can be changes, but you will need to edit "MarginLeft" of code line 135 in the penalty_item component.
+-Grand Prix Color can be edited via hex code under the main layer
+-The Grand Prix Names are also customizable on the right of the ":" section of localization.
