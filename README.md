@@ -10,3 +10,5 @@
 -Grand Prix Color can be edited via hex code under the main layer.
 
 -The Grand Prix Names are also customizable on the right of the ":" section of localization.
+
+![image](https://user-images.githubusercontent.com/111990188/227531062-5e3d104c-2d79-457b-bd04-b9dc429e5772.png)
