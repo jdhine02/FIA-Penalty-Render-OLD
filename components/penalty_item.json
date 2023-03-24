@@ -446,7 +446,7 @@
                             "BlockType": "stack",
                             "VerticalAlignment": "Center",
                             "HorizontalAlignment": "Left",
-                            "Orientation":"Horizontal",
+                            "Orientation":"Vertical",
                             "MarginLeft": 85,
                             "Spacing": 12,
                             "Items": [
@@ -458,7 +458,7 @@
                                                 "HorizontalAlignment": "Left",
                                                 "VerticalAlignment": "Center",
                                                 "FontName": "{FontNameDefault}",
-                                                "Foreground" : "#CE4545",
+                                                "Foreground" : "{BlackText}",
                                                 "FontSize": 28
                                             },
 
@@ -470,7 +470,7 @@
                                                 "HorizontalAlignment": "Left",
                                                 "VerticalAlignment": "Center",
                                                 "FontName": "{FontNameDefault}",
-                                                "Foreground" : "#CE4545",
+                                                "Foreground" : "{BlackText}",
                                                 "FontSize": 28
                                             },
 
@@ -482,7 +482,7 @@
                                                 "HorizontalAlignment": "Left",
                                                 "VerticalAlignment": "Center",
                                                 "FontName": "{FontNameDefault}",
-                                                "Foreground" : "#C07373",
+                                                "Foreground" : "{BlackText}",
                                                 "FontSize": 28
                                             },
 
@@ -504,7 +504,7 @@
                                                 "HorizontalAlignment": "Left",
                                                 "VerticalAlignment": "Center",
                                                 "FontName": "{FontNameDefault}",
-                                                "Foreground" : "#D53131",
+                                                "Foreground" : "{BlackText}",
                                                 "FontSize": 28
                                             },
                             
@@ -516,18 +516,18 @@
                                                 "HorizontalAlignment": "Left",
                                                 "VerticalAlignment": "Center",
                                                 "FontName": "{FontNameDefault}",
-                                                "Foreground" : "#D53131",
+                                                "Foreground" : "{BlackText}",
                                                 "FontSize": 28
                                             },
                                             //no penalty
                                             {
                                                 "BlockType": "text",                                   
-                                                "Source": "NO FUTHER ACTION",
+                                                "Source": "No Further Action",
                                                 "RenderIf" : "<{Penalty.IsNoPunishment}>",
                                                 "HorizontalAlignment": "Left",
                                                 "VerticalAlignment": "Center",
                                                 "FontName": "{FontNameDefault}",
-                                                "Foreground" : "#45CE45",
+                                                "Foreground" : "{BlackText}",
                                                 "Padding" : "16",
                                                 "FontSize": 28
                                             },
