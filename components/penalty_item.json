@@ -450,30 +450,6 @@
                             "MarginLeft": 85,
                             "Spacing": 12,
                             "Items": [
-                                            //pp
-                                            {
-                                                "BlockType": "text",                                   
-                                                "Source": "<{Penalty.PenaltyPoints, Converter=NumberToSignedString}> Penalty Point",
-                                                "RenderIf" : "<{Penalty.PenaltyPoints, Converter=NumberIsNotZero}>",
-                                                "HorizontalAlignment": "Left",
-                                                "VerticalAlignment": "Center",
-                                                "FontName": "{FontNameDefault}",
-                                                "Foreground" : "{BlackText}",
-                                                "FontSize": 28
-                                            },
-
-                                            //warning
-                                            {
-                                                "BlockType": "text",                                
-                                                "Source": "+W",
-                                                "RenderIf" : "<{Penalty.PenaltyWarnings, Converter=NumberIsNotZero}>",
-                                                "HorizontalAlignment": "Left",
-                                                "VerticalAlignment": "Center",
-                                                "FontName": "{FontNameDefault}",
-                                                "Foreground" : "{BlackText}",
-                                                "FontSize": 28
-                                            },
-
                                             //pen. time
                                             {
                                                 "BlockType": "text",                               
@@ -489,7 +465,7 @@
                                             //pen. pos
                                             {
                                                 "BlockType": "text",                                
-                                                "Source": "<{Penalty.PenaltyPositions, Converter=NumberToSignedString}> pos. grid drop",
+                                                "Source": "<{Penalty.PenaltyPositions, Converter=NumberToSignedString}> position grid drop",
                                                 "RenderIf" : "<{Penalty.PenaltyPositions, Converter=NumberIsNotZero}>",
                                                 "HorizontalAlignment": "Left",
                                                 "VerticalAlignment": "Center",
@@ -497,6 +473,29 @@
                                                 "Foreground" : "{BlackText}",
                                                 "FontSize": 28
                                             },
+                                            //pp
+                                            {
+                                                "BlockType": "text",                                   
+                                                "Source": "<{Penalty.PenaltyPoints, Converter=NumberToSignedString}> penalty point(s)",
+                                                "RenderIf" : "<{Penalty.PenaltyPoints, Converter=NumberIsNotZero}>",
+                                                "HorizontalAlignment": "Left",
+                                                "VerticalAlignment": "Center",
+                                                "FontName": "{FontNameDefault}",
+                                                "Foreground" : "{BlackText}",
+                                                "FontSize": 28
+                                            },
+                                            //warning
+                                            {
+                                                "BlockType": "text",                                
+                                                "Source": "<{Penalty.PenaltyWarnings, Converter=NumberToSignedString}> warning(s)",
+                                                "RenderIf" : "<{Penalty.PenaltyWarnings, Converter=NumberIsNotZero}>",
+                                                "HorizontalAlignment": "Left",
+                                                "VerticalAlignment": "Center",
+                                                "FontName": "{FontNameDefault}",
+                                                "Foreground" : "{BlackText}",
+                                                "FontSize": 28
+                                            },
+                                            //penalty action
                                             {
                                                 "BlockType": "text",                               
                                                 "Source": "<{Penalty.PenaltyActionString}>",
@@ -507,7 +506,7 @@
                                                 "Foreground" : "{BlackText}",
                                                 "FontSize": 28
                                             },
-                            
+                                            //penalty action value
                                             {
                                                 "BlockType": "text",
                                                 "MaxWidth": 600,                    
@@ -575,6 +574,7 @@
 
                 ]
             },
+            //the stewards
             {
                 "BlockType": "text",                   
                 "Source" : "The Stewards",
