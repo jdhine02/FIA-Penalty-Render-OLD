@@ -4,6 +4,7 @@
         "BlockType": "stack",
         "Margin": "{MarginRoot}",
         "Orientation": "Vertical",
+        "Background": "#ffffff",
         "Items": [
             //event info
             {
@@ -43,23 +44,22 @@
                                             {
                                                 "BlockType": "text",
                                                 "Source": "{Season.LeagueInfo.LeagueName}",
-                                                "FontName": "{FontNameWide}",
-                                                "Foreground":"{BlackText}",
+                                                "FontName": "{FIAFontWide}",
+                                                "Foreground":"{FIAText}",
                                                 "FontSize": 30
                                             },
                                             {
                                                 "BlockType": "text",
                                                 "Source": "{Season.Name}",
                                                 "VerticalAlignment": "Center",
-                                                "FontName": "{FontNameWide}",
+                                                "FontName": "{FIAFontWide}",
                                                 "FontSize": 25,
-                                                "Foreground": "{BlackText}"
+                                                "Foreground": "{FIAText}"
                                             }
                                         ]
                                     }
                                 ]
                             },
-
                             //session
                             {
                                 "Name": "headerSessionLine",
@@ -76,8 +76,8 @@
                                         "VerticalAlignment": "Center",
                                         "Source": "[{Event.Track.CircuitName} Grand Prix]",
                                         "TextOptionsExtern": "CountryName",
-                                        "FontName": "{FontNameWide}",
-                                        "Foreground":"{#FF1801}",
+                                        "FontName": "{FIAFontWide}",
+                                        "Foreground":"{FIAGrandPrix}",
                                         "FontSize": 35
                                     },
 
@@ -87,32 +87,16 @@
                                         "HorizontalAlignment" :"Center",
                                         "VerticalAlignment": "Center",
                                         "Source": "{Event.Date, Converter=DateToDayOfMonth} {Event.Date, Converter=DateToMonthInWords} {Event.Date, Converter=DateToYear}",
-                                        "FontName": "{FontNameWide}",
+                                        "FontName": "{FIAFontWide}",
                                         "FontSize": 18,
-                                        "Foreground": "{BlackText}"
+                                        "Foreground": "{FIAText}"
                                     }
                                 ]
                             }
                         ]
                     }
                 ]
-            },
-
-            //separator
-            {
-                "Name": "separator",
-                "RenderIf" : "{Event, Converter=EmptyObjectToFalse}",
-                "BlockType": "image",
-                "MarginTop": 4,
-                "MarginLeft": 4,
-                "MarginRight": 4,
-                "MarginBottom": 24,
-                "Width": "*",
-                "Background": "#000000",
-                "Source": "separator.png"
-            },
-            
-
+            },         
             //penalties
             {
                 "BlockType": "itemstack",
@@ -123,8 +107,8 @@
                     "Template": {
                         "BlockType": "component",
                         "Width" : "*",
-                        "Background" : "#09FFFFFF",
-                        "ComponentName": "penalty_item",
+                        "Background" : "{FIABGColor}",
+                        "ComponentName": "fia_penalty_item",
                         "ComponentOptions": {
                             "Vars": {
                                 "Penalty": "{Item}"
