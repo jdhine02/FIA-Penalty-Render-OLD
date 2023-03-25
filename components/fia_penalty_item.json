@@ -8,7 +8,8 @@
         //separator
         {
             "BlockType" : "Component",
-            "ComponentName" : "fia_penalty_separator"
+            "ComponentName" : "fia_penalty_separator",
+            "RenderIf": "{RenderPenaltSeparator}"
         },
         //Stewards Header
         {
@@ -174,7 +175,8 @@
         //separator
         {
             "BlockType" : "Component",
-            "ComponentName" : "fia_penalty_separator"
+            "ComponentName" : "fia_penalty_separator",
+            "RenderIf": "{RenderPenaltSeparator}"
         },
         {
             "BlockType": "stack",
@@ -503,6 +505,41 @@
                                 "BlockType": "text",
                                 "MaxWidth": 1400,                               
                                 "Source": "<{Penalty.Description}>",                    
+                                "HorizontalAlignment": "Left",
+                                "VerticalAlignment": "Top",
+                                "FontName": "{FontNameDefault}",
+                                "Foreground" : "{FIAText}",                   
+                               "FontSize": "{FIAFontSize}",
+                                "TextOptions" : 
+                                {
+                                    "Wrap" : true
+                                }
+                            }
+                        ]
+                    },
+                    //Decision Reason
+                    {
+                        "BlockType": "stack",
+                        "Orientation" : "Horizontal",
+                        "RenderIf" : "<{Penalty.Verdict, Converter=EmptyObjectToFalse}>",
+                        "RenderIf": "{RenderPenaltyVerdict}",
+                        "Items" :
+                        [
+                            {
+                                "BlockType": "text",                   
+                                "Source" : "Verdict",                             
+                                "HorizontalAlignment": "Left",
+                                "VerticalAlignment": "Top",
+                                "FontName": "{FIAFont}",
+                                "Foreground" : "{FIAText}",                                     
+                                "FontSize": "{FIAFontSize}",
+                                "Width" : "{FIALeftBlockWidth}"
+                            },
+
+                            {
+                                "BlockType": "text",
+                                "MaxWidth": 1400,                               
+                                "Source": "<{Penalty.Verdict}>",                    
                                 "HorizontalAlignment": "Left",
                                 "VerticalAlignment": "Top",
                                 "FontName": "{FontNameDefault}",
