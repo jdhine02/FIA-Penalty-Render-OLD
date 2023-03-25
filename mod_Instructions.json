@@ -2,7 +2,7 @@
 
 //1) Please add the penalty_item.json into the component file
 //2) Please copy the entire event_penalties file into the layers file
-//3) Copy the following code and palce into the globa_var file:
+//3) Copy the following code and palce into the global_var file:
 
     //FIA text
     "FIAFontSize": "28",
