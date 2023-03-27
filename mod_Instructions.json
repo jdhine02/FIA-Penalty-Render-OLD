@@ -14,6 +14,7 @@
     "FIARightBlockWidth" : "1500",
     "FIAFont": "Formula1-Regular",
     "FIAFontWide": "Formula1-Wide",
+    "FIAFontBold" :"Formula1-Bold",
     "PenaltySeparator": "#000000",
     "FIABGColor" : "#09FFFFFF",
 
