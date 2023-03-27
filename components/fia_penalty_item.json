@@ -42,7 +42,7 @@
                                         "Name":"From",
                                         "BlockType":"text",
                                         "Source": "From",
-                                        "FontName": "{FIAFont}",
+                                        "FontName": "{FIAFontBold}",
                                         "Foreground" : "{FIAText}",                                     
                                         "FontSize": "{FIAFontSize}",
                                         "Width" : "{FIALeftBlockWidth}",
@@ -51,7 +51,7 @@
                                             "Name":"From Issuer",
                                             "BlockType":"text",
                                             "Source": "{Item.Issuer.Name}",
-                                            "FontName": "{FontNameDefault}",
+                                            "FontName": "{FIAFont}",
                                             "Foreground" : "{FIAText}",                                     
                                             "FontSize": "{FIAFontSize}",
                                         },
@@ -76,7 +76,7 @@
                                                 "Name":"to",
                                                 "BlockType":"text",
                                                 "Source": "To",
-                                                "FontName": "{FIAFont}",
+                                                "FontName": "{FIAFontBold}",
                                                 "Foreground" : "{FIAText}",                                     
                                                 "FontSize": "{FIAFontSize}",
                                                 "Width" : "{FIALeftBlockWidth}",
@@ -85,7 +85,7 @@
                                                 "Name":"Team",
                                                 "BlockType":"text",
                                                 "Source": "The Team Manager, <{Penalty.Team.FullName}>",
-                                                "FontName": "{FontNameDefault}",
+                                                "FontName": "{FIAFont}",
                                                 "Foreground" : "{FIAText}",                                     
                                                 "FontSize": "{FIAFontSize}",
                                                 "Triggers":
@@ -126,7 +126,7 @@
                                         "Name":"Doc",
                                         "BlockType":"text",
                                         "Source": "{StewardReportType}",
-                                        "FontName": "{FIAFont}",
+                                        "FontName": "{FIAFontBold}",
                                         "Foreground" : "{FIAText}",                                     
                                         "FontSize": "{FIAFontSize}",
                                         "Width" : "{FIALeftBlockWidth}",
@@ -135,7 +135,7 @@
                                             "Name":"ID#",
                                             "BlockType":"text",
                                             "Source": "{Item.PenaltyId}",
-                                            "FontName": "{FontNameDefault}",
+                                            "FontName": "{FIAFont}",
                                             "Foreground" : "{FIAText}",                                     
                                             "FontSize": "{FIAFontSize}"
                                         },
@@ -153,7 +153,7 @@
                                         "Name":"Date",
                                         "BlockType":"text",
                                         "Source": "Date",
-                                        "FontName": "{FIAFont}",
+                                        "FontName": "{FIAFontBold}",
                                         "Foreground" : "{FIAText}",                                     
                                         "FontSize": "{FIAFontSize}",
                                         "Width" : "{FIALeftBlockWidth}",
@@ -162,7 +162,7 @@
                                             "Name":"dmy",
                                             "BlockType":"text",
                                             "Source": "{Event.Date, Converter=DateToDayOfMonth} {Event.Date, Converter=DateToMonthInWords} {Event.Date, Converter=DateToYear}",
-                                            "FontName": "{FontNameDefault}",
+                                            "FontName": "{FIAFont}",
                                             "Foreground" : "{FIAText}",                                     
                                             "FontSize": "{FIAFontSize}"
                                         },
@@ -192,7 +192,7 @@
                     "BlockType":"text",
                     "HorizontalAlignment": "Left",
                     "Source": "The Stewards, having recieved an incident submital, have considered the following matter and determine the following:",
-                    "FontName": "{FontNameDefault}",
+                    "FontName": "{FIAFont}",
                     "Foreground" : "{FIAText}",                                     
                     "FontSize": "{FIAFontSize}"
                 },
@@ -208,7 +208,7 @@
                             "Source" : "No / Driver",
                             "Width" : "{FIALeftBlockWidth}",                          
                             "VerticalAlignment": "Top",
-                            "FontName": "{FIAFont}",
+                            "FontName": "{FIAFontBold}",
                             "Foreground" : "{FIAText}",                                     
                             "FontSize": "{FIAFontSize}"
                         },
@@ -216,7 +216,7 @@
                             "BlockType": "text",                          
                             "Source": "{Item.Driver.RaceNumber} [-] ",                    
                             "VerticalAlignment": "Top",
-                            "FontName": "{FontNameDefault}",
+                            "FontName": "{FIAFont}",
                             "Foreground" : "{FIAText}",                   
                            "FontSize": "{FIAFontSize}",
                             "TextOptions" : 
@@ -228,7 +228,7 @@
                             "BlockType": "text",                          
                             "Source": "<{Penalty.Driver.Name}>",                    
                             "VerticalAlignment": "Top",
-                            "FontName": "{FontNameDefault}",
+                            "FontName": "{FIAFont}",
                             "Foreground" : "{FIAText}",                   
                            "FontSize": "{FIAFontSize}",
                             "TextOptions" : 
@@ -250,7 +250,7 @@
                             "Source" : "Competitor",
                             "Width" : "{FIALeftBlockWidth}",                             
                             "VerticalAlignment": "Top",
-                            "FontName": "{FIAFont}",
+                            "FontName": "{FIAFontBold}",
                             "Foreground" : "{FIAText}",                                     
                             "FontSize": "{FIAFontSize}"
                         },
@@ -260,7 +260,7 @@
                             "Source": "<{Penalty.Team.FullName}>",                    
                             "HorizontalAlignment": "Left",
                             "VerticalAlignment": "Top",
-                            "FontName": "{FontNameDefault}",
+                            "FontName": "{FIAFont}",
                             "Foreground" : "{FIAText}",                   
                            "FontSize": "{FIAFontSize}",
                             "TextOptions" : 
@@ -288,7 +288,7 @@
                         {
                             "BlockType": "text",                   
                             "Source" : "Session",
-                            "FontName": "{FIAFont}",
+                            "FontName": "{FIAFontBold}",
                             "Foreground" : "{FIAText}",                                     
                             "FontSize": "{FIAFontSize}",
                             "Width" : "{FIALeftBlockWidth}"
@@ -296,7 +296,7 @@
                         {
                             "BlockType": "text",                                  
                             "Source": "<{Penalty.SessionResult.SessionType}>",                    
-                            "FontName": "{FontNameDefault}",
+                            "FontName": "{FIAFont}",
                             "Foreground" : "{FIAText}",                   
                            "FontSize": "{FIAFontSize}",
                             "TextOptions" : 
@@ -316,7 +316,7 @@
                         {
                             "BlockType": "text",                   
                             "Source" : "Offence",
-                            "FontName": "{FIAFont}",
+                            "FontName": "{FIAFontBold}",
                             "Foreground" : "{FIAText}",                                     
                             "FontSize": "{FIAFontSize}",
                             "Width" : "{FIALeftBlockWidth}"
@@ -326,7 +326,7 @@
                             "Source": "<{Penalty.Offense}> ",                    
                             "HorizontalAlignment": "Left",
                             "VerticalAlignment": "Top",
-                            "FontName": "{FontNameDefault}",
+                            "FontName": "{FIAFont}",
                             "Foreground" : "{FIAText}",                   
                            "FontSize": "{FIAFontSize}",
                             "TextOptions" : 
@@ -339,20 +339,21 @@
                             "Source": "involving driver(s) <{Penalty.DriversInvolvedString}> ",                    
                             "HorizontalAlignment": "Left",
                             "VerticalAlignment": "Top",
-                            "FontName": "{FontNameDefault}",
+                            "FontName": "{FIAFont}",
                             "Foreground" : "{FIAText}",                   
                            "FontSize": "{FIAFontSize}",
                             "TextOptions" : 
                             {
                                 "Wrap" : false
                             },
+                            "RenderIf" : "<{Penalty.DriversInvolvedString, Converter=EmptyObjectToFalse}>",                            
                         },
                         {
                             "BlockType": "text",                                
                             "Source": "in turn <{Penalty.Turn}> ",                    
                             "HorizontalAlignment": "Left",
                             "VerticalAlignment": "Top",
-                            "FontName": "{FontNameDefault}",
+                            "FontName": "{FIAFont}",
                             "Foreground" : "{FIAText}",                   
                            "FontSize": "{FIAFontSize}",
                             "TextOptions" : 
@@ -366,13 +367,14 @@
                             "Source": "on lap <{Penalty.Lap}>",                    
                             "HorizontalAlignment": "Left",
                             "VerticalAlignment": "Top",
-                            "FontName": "{FontNameDefault}",
+                            "FontName": "{FIAFont}",
                             "Foreground" : "{FIAText}",                   
                            "FontSize": "{FIAFontSize}",
                             "TextOptions" : 
                             {
                                 "Wrap" : false
-                            }
+                            },
+                            "RenderIf" : "<{Penalty.Lap, Converter=EmptyObjectToFalse}>",
                         },
                     ]
                 },
@@ -388,7 +390,7 @@
                             "Source" : "Decision",                               
                             "HorizontalAlignment": "Left",
                             "VerticalAlignment": "Top",
-                            "FontName": "{FIAFont}",
+                            "FontName": "{FIAFontBold}",
                             "Foreground" : "{FIAText}",                                     
                             "FontSize": "{FIAFontSize}",
                             "Width" : "{FIALeftBlockWidth}"
@@ -406,7 +408,7 @@
                                                 "RenderIf" : "<{Penalty.PenaltySeconds, Converter=NumberIsNotZero}>",
                                                 "HorizontalAlignment": "Left",
                                                 "VerticalAlignment": "Center",
-                                                "FontName": "{FontNameDefault}",
+                                                "FontName": "{FIAFont}",
                                                 "Foreground" : "{FIAText}",
                                                 "FontSize": "{FIAFontSize}"
                                             },
@@ -418,7 +420,7 @@
                                                 "RenderIf" : "<{Penalty.PenaltyPositions, Converter=NumberIsNotZero}>",
                                                 "HorizontalAlignment": "Left",
                                                 "VerticalAlignment": "Center",
-                                                "FontName": "{FontNameDefault}",
+                                                "FontName": "{FIAFont}",
                                                 "Foreground" : "{FIAText}",
                                                 "FontSize": "{FIAFontSize}"
                                             },
@@ -429,7 +431,7 @@
                                                 "RenderIf" : "<{Penalty.PenaltyPoints, Converter=NumberIsNotZero}>",
                                                 "HorizontalAlignment": "Left",
                                                 "VerticalAlignment": "Center",
-                                                "FontName": "{FontNameDefault}",
+                                                "FontName": "{FIAFont}",
                                                 "Foreground" : "{FIAText}",
                                                 "FontSize": "{FIAFontSize}"
                                             },
@@ -440,7 +442,7 @@
                                                 "RenderIf" : "<{Penalty.PenaltyWarnings, Converter=NumberIsNotZero}>",
                                                 "HorizontalAlignment": "Left",
                                                 "VerticalAlignment": "Center",
-                                                "FontName": "{FontNameDefault}",
+                                                "FontName": "{FIAFont}",
                                                 "Foreground" : "{FIAText}",
                                                 "FontSize": "{FIAFontSize}"
                                             },
@@ -451,7 +453,7 @@
                                                 "RenderIf" : "<{Penalty.IsAction}>",
                                                 "HorizontalAlignment": "Left",
                                                 "VerticalAlignment": "Center",
-                                                "FontName": "{FontNameDefault}",
+                                                "FontName": "{FIAFont}",
                                                 "Foreground" : "{FIAText}",
                                                 "FontSize": "{FIAFontSize}"
                                             },
@@ -463,7 +465,7 @@
                                                 "RenderIf" : "<{Penalty.PenaltyActionValue, Converter=NumberIsNotZero}>",
                                                 "HorizontalAlignment": "Left",
                                                 "VerticalAlignment": "Center",
-                                                "FontName": "{FontNameDefault}",
+                                                "FontName": "{FIAFont}",
                                                 "Foreground" : "{FIAText}",
                                                 "FontSize": "{FIAFontSize}"
                                             },
@@ -474,7 +476,7 @@
                                                 "RenderIf" : "<{Penalty.IsNoPunishment}>",
                                                 "HorizontalAlignment": "Left",
                                                 "VerticalAlignment": "Center",
-                                                "FontName": "{FontNameDefault}",
+                                                "FontName": "{FIAFont}",
                                                 "Foreground" : "{FIAText}",
                                                 "Padding" : "16",
                                                 "FontSize": "{FIAFontSize}"
@@ -495,7 +497,7 @@
                                 "Source" : "Details",                             
                                 "HorizontalAlignment": "Left",
                                 "VerticalAlignment": "Top",
-                                "FontName": "{FIAFont}",
+                                "FontName": "{FIAFontBold}",
                                 "Foreground" : "{FIAText}",                                     
                                 "FontSize": "{FIAFontSize}",
                                 "Width" : "{FIALeftBlockWidth}"
@@ -507,7 +509,7 @@
                                 "Source": "<{Penalty.Description}>",                    
                                 "HorizontalAlignment": "Left",
                                 "VerticalAlignment": "Top",
-                                "FontName": "{FontNameDefault}",
+                                "FontName": "{FIAFont}",
                                 "Foreground" : "{FIAText}",                   
                                "FontSize": "{FIAFontSize}",
                                 "TextOptions" : 
@@ -530,7 +532,7 @@
                                 "Source" : "Verdict",                             
                                 "HorizontalAlignment": "Left",
                                 "VerticalAlignment": "Top",
-                                "FontName": "{FIAFont}",
+                                "FontName": "{FIAFontBold}",
                                 "Foreground" : "{FIAText}",                                     
                                 "FontSize": "{FIAFontSize}",
                                 "Width" : "{FIALeftBlockWidth}"
@@ -542,7 +544,7 @@
                                 "Source": "<{Penalty.Verdict}>",                    
                                 "HorizontalAlignment": "Left",
                                 "VerticalAlignment": "Top",
-                                "FontName": "{FontNameDefault}",
+                                "FontName": "{FIAFont}",
                                 "Foreground" : "{FIAText}",                   
                                "FontSize": "{FIAFontSize}",
                                 "TextOptions" : 
@@ -562,7 +564,7 @@
                 "MarginTop" : 75,
                 "MarginBottom" : 75,
                 "MarginLeft" : 50,
-                "FontName": "{FIAFont}",
+                "FontName": "{FIAFontBold}",
                 "Foreground" : "{FIAText}",                                     
                 "FontSize": "{FIAFontSize}"
             },
