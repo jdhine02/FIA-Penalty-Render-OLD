@@ -295,7 +295,7 @@
                         },
                         {
                             "BlockType": "text",                                  
-                            "Source": "<{Penalty.SessionResult.SessionType}>",                    
+                            "Source": "<{Penalty.Session.SessionType}>",                    
                             "FontName": "{FIAFont}",
                             "Foreground" : "{FIAText}",                   
                            "FontSize": "{FIAFontSize}",
