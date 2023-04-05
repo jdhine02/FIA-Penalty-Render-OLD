@@ -1,6 +1,6 @@
 {
     "LayoutName": "JPPLPenaltyItems",
-    "RenderType": "PenaltyItem",
+    "RenderType": "PenaltyItems",
 	"RenderCaption": "",
     "Index" : 0	
 }
