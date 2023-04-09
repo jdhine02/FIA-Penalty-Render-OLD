@@ -1,3 +1,4 @@
 # FIA-Penalty-Render
 
-![image](https://user-images.githubusercontent.com/111990188/227531062-5e3d104c-2d79-457b-bd04-b9dc429e5772.png)
+
+![penalties](https://user-images.githubusercontent.com/111990188/230775268-87c7774f-9a74-4545-afa7-962411a2c169.png)
