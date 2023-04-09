@@ -2,7 +2,7 @@
 
 //1) Please add the penalty_item.json into the component file
 //2) Please copy the entire event_penalties file into the layers file
-//3) Copy the following code and palce into the globa_var file:
+//3) Copy the following code and palce into the global_var file:
 
     //FIA text
     "FIAFontSize": "28",
@@ -51,9 +51,24 @@
     "Monaco Grand Prix": "Grand Prix De Monaco",
     "Marina Bay Grand Prix": "Singapore Grand Prix",
     "Mexico Grand Prix": "Gran Premio de Mexico",
+    "FIAFrom": "From",
+    "FIADate": "Date",
+    "FIAReservist": "Reservist",
+    "FIADriver": "No / Driver",
+    "FIANumberSeparator": "-",
+    "FIACompetitor": "Competitor",
+    "FIASession": "Session",
+    "FIAOffence" : "Offence",
+    "FIAinvolvingdriver(s)": "involving driver(s)",
+    "FIAinturn": "in turn",
+    "FIAonlap": "on lap",
+    "FIADecision": "Decision",
+    "FIADetails": "Details",
+    "FIAVerdict": "Verdict",
+    "FIASignature": "The Stewards",
 
 //-Steward Report Type Name can be changed via change theme-> settings -> replace "report"
 
 //-All text, penalty area and separator colors can be changed via global_var FIA section with color hex codes
 
-//-The Grand Prix Names are also customizable on the right of the ":" section of localization.
+//-The Grand Prix Names and section headers are also customizable on the right of the ":" section of localization.
