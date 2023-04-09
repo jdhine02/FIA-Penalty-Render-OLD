@@ -9,7 +9,7 @@
         {
             "BlockType" : "Component",
             "ComponentName" : "fia_penalty_separator",
-            "RenderIf": "{RenderPenaltSeparator}"
+            "RenderIf": "{RenderPenaltySeparator}"
         },
         //Stewards Header
         {
@@ -41,7 +41,7 @@
                                         {
                                         "Name":"From",
                                         "BlockType":"text",
-                                        "Source": "From",
+                                        "Source": "[FIAFrom]",
                                         "FontName": "{FIAFontBold}",
                                         "Foreground" : "{FIAText}",                                     
                                         "FontSize": "{FIAFontSize}",
@@ -50,7 +50,7 @@
                                         {
                                             "Name":"From Issuer",
                                             "BlockType":"text",
-                                            "Source": "{Item.Issuer.Name}",
+                                            "Source": "<{penalty.Issuer.Name}>",
                                             "FontName": "{FIAFont}",
                                             "Foreground" : "{FIAText}",                                     
                                             "FontSize": "{FIAFontSize}",
@@ -91,9 +91,9 @@
                                                 "Triggers":
                                                 [
                                                     {
-                                                        "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                                        "Condition" : "<{Penalty.Team.Name, Converter=EmptyObjectToTrue}>",
                                                         "Property" : "Source",
-                                                        "Value" : "Reservist"
+                                                        "Value" : "[FIAReservist]"
                                                     },
                                                 ]
                                                 },
@@ -134,7 +134,7 @@
                                         {
                                             "Name":"ID#",
                                             "BlockType":"text",
-                                            "Source": "{Item.PenaltyId}",
+                                            "Source": "<{Penalty.PenaltyId}>",
                                             "FontName": "{FIAFont}",
                                             "Foreground" : "{FIAText}",                                     
                                             "FontSize": "{FIAFontSize}"
@@ -152,7 +152,7 @@
                                         {
                                         "Name":"Date",
                                         "BlockType":"text",
-                                        "Source": "Date",
+                                        "Source": "[Date]",
                                         "FontName": "{FIAFontBold}",
                                         "Foreground" : "{FIAText}",                                     
                                         "FontSize": "{FIAFontSize}",
@@ -161,7 +161,23 @@
                                         {
                                             "Name":"dmy",
                                             "BlockType":"text",
-                                            "Source": "{Event.Date, Converter=DateToDayOfMonth} {Event.Date, Converter=DateToMonthInWords} {Event.Date, Converter=DateToYear}",
+                                            "Source": "<{Penalty.Date, Converter=DateToDayOfMonth}>",
+                                            "FontName": "{FIAFont}",
+                                            "Foreground" : "{FIAText}",                                     
+                                            "FontSize": "{FIAFontSize}"
+                                        },
+                                        {
+                                            "Name":"dmy",
+                                            "BlockType":"text",
+                                            "Source": " <{Penalty.Date, Converter=DateToMonthInWords}>",
+                                            "FontName": "{FIAFont}",
+                                            "Foreground" : "{FIAText}",                                     
+                                            "FontSize": "{FIAFontSize}"
+                                        },
+                                        {
+                                            "Name":"dmy",
+                                            "BlockType":"text",
+                                            "Source": " <{Penalty.Date, Converter=DateToYear}>",
                                             "FontName": "{FIAFont}",
                                             "Foreground" : "{FIAText}",                                     
                                             "FontSize": "{FIAFontSize}"
@@ -205,7 +221,7 @@
                     [
                         {
                             "BlockType": "text",                   
-                            "Source" : "No / Driver",
+                            "Source" : "[No / Driver]",
                             "Width" : "{FIALeftBlockWidth}",                          
                             "VerticalAlignment": "Top",
                             "FontName": "{FIAFontBold}",
@@ -214,7 +230,7 @@
                         },
                         {
                             "BlockType": "text",                          
-                            "Source": "{Item.Driver.RaceNumber} [-] ",                    
+                            "Source": "<{Penalty.Driver.RaceNumber}>",                    
                             "VerticalAlignment": "Top",
                             "FontName": "{FIAFont}",
                             "Foreground" : "{FIAText}",                   
@@ -226,7 +242,19 @@
                         },
                         {
                             "BlockType": "text",                          
-                            "Source": "<{Penalty.Driver.Name}>",                    
+                            "Source": " [FIANumberSeparator] ",                    
+                            "VerticalAlignment": "Top",
+                            "FontName": "{FIAFont}",
+                            "Foreground" : "{FIAText}",                   
+                           "FontSize": "{FIAFontSize}",
+                            "TextOptions" : 
+                            {
+                                "Wrap" : false
+                            }
+                        },
+                        {
+                            "BlockType": "text",                          
+                            "Source": " <{Penalty.Driver.Name}>",                    
                             "VerticalAlignment": "Top",
                             "FontName": "{FIAFont}",
                             "Foreground" : "{FIAText}",                   
@@ -247,7 +275,7 @@
                     [
                         {
                             "BlockType": "text",                   
-                            "Source" : "Competitor",
+                            "Source" : "[FIACompetitor]",
                             "Width" : "{FIALeftBlockWidth}",                             
                             "VerticalAlignment": "Top",
                             "FontName": "{FIAFontBold}",
@@ -270,9 +298,9 @@
                             "Triggers":
                             [
                                 {
-                                    "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                    "Condition" : "<{Penalty.Team.Name, Converter=EmptyObjectToTrue}>",
                                     "Property" : "Source",
-                                    "Value" : "Reservist"
+                                    "Value" : "[FIAReservist]"
                                 },
                             ]
                         }
@@ -287,7 +315,7 @@
                     [
                         {
                             "BlockType": "text",                   
-                            "Source" : "Session",
+                            "Source" : "[FIASession]",
                             "FontName": "{FIAFontBold}",
                             "Foreground" : "{FIAText}",                                     
                             "FontSize": "{FIAFontSize}",
@@ -315,7 +343,7 @@
                     [
                         {
                             "BlockType": "text",                   
-                            "Source" : "Offence",
+                            "Source" : "[FIAOffence]",
                             "FontName": "{FIAFontBold}",
                             "Foreground" : "{FIAText}",                                     
                             "FontSize": "{FIAFontSize}",
@@ -336,7 +364,7 @@
                         },
                         {
                             "BlockType": "text",                               
-                            "Source": "involving driver(s) <{Penalty.DriversInvolvedString}> ",                    
+                            "Source": " [FIAinvolvingdriver(s)] <{Penalty.DriversInvolvedString}> ",                    
                             "HorizontalAlignment": "Left",
                             "VerticalAlignment": "Top",
                             "FontName": "{FIAFont}",
@@ -350,7 +378,7 @@
                         },
                         {
                             "BlockType": "text",                                
-                            "Source": "in turn <{Penalty.Turn}> ",                    
+                            "Source": " [FIAinturn] <{Penalty.Turn}> ",                    
                             "HorizontalAlignment": "Left",
                             "VerticalAlignment": "Top",
                             "FontName": "{FIAFont}",
@@ -364,7 +392,7 @@
                         },
                         {
                             "BlockType": "text",                           
-                            "Source": "on lap <{Penalty.Lap}>",                    
+                            "Source": " [FIAonlap] <{Penalty.Lap}>",                    
                             "HorizontalAlignment": "Left",
                             "VerticalAlignment": "Top",
                             "FontName": "{FIAFont}",
@@ -387,7 +415,7 @@
                     [
                         {
                             "BlockType": "text",                   
-                            "Source" : "Decision",                               
+                            "Source" : "[FIADecision]",                               
                             "HorizontalAlignment": "Left",
                             "VerticalAlignment": "Top",
                             "FontName": "{FIAFontBold}",
@@ -494,7 +522,7 @@
                         [
                             {
                                 "BlockType": "text",                   
-                                "Source" : "Details",                             
+                                "Source" : "[FIADetails]",                             
                                 "HorizontalAlignment": "Left",
                                 "VerticalAlignment": "Top",
                                 "FontName": "{FIAFontBold}",
@@ -529,7 +557,7 @@
                         [
                             {
                                 "BlockType": "text",                   
-                                "Source" : "Verdict",                             
+                                "Source" : "[FIAVerdict]",                             
                                 "HorizontalAlignment": "Left",
                                 "VerticalAlignment": "Top",
                                 "FontName": "{FIAFontBold}",
@@ -560,7 +588,7 @@
             //the stewards
             {
                 "BlockType": "text",                   
-                "Source" : "The Stewards",
+                "Source" : "[FIASignature]",
                 "MarginTop" : 75,
                 "MarginBottom" : 75,
                 "MarginLeft" : 50,
