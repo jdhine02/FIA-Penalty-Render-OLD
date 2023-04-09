@@ -1,7 +1,7 @@
 //# FIA-Penalty-Render
 
-//1) Please add the penalty_item.json into the component file
-//2) Please copy the entire event_penalties file into the layers file
+//1) Please add the fia_penalty_item.json and fia_penalty_item_Driver.json into the component file
+//2) Please copy the entire event_penalties and driver_penalties file into the layers file
 //3) Copy the following code and palce into the global_var file:
 
     //FIA text
@@ -66,6 +66,7 @@
     "FIADetails": "Details",
     "FIAVerdict": "Verdict",
     "FIASignature": "The Stewards",
+    "FIATheStewards": "The Stewards"
 
 //-Steward Report Type Name can be changed via change theme-> settings -> replace "report"
 
