@@ -50,10 +50,18 @@
                                         {
                                             "Name":"From Issuer",
                                             "BlockType":"text",
-                                            "Source": "<{penalty.Issuer.Name}>",
+                                            "Source": "<{Penalty.Issuer.Name}>",
                                             "FontName": "{FIAFont}",
                                             "Foreground" : "{FIAText}",                                     
                                             "FontSize": "{FIAFontSize}",
+                                            "Triggers":
+                                            [
+                                                {
+                                                    "Condition" : "<{Penalty.Team.Name, Converter=EmptyObjectToTrue}>",
+                                                    "Property" : "Source",
+                                                    "Value" : "[The Stewards]"
+                                                },
+                                            ]
                                         },
                                     ]
                                 },
