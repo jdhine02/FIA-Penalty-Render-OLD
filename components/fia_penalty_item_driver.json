@@ -50,7 +50,7 @@
                                         {
                                             "Name":"From Issuer",
                                             "BlockType":"text",
-                                            "Source": "<{penalty.Issuer.Name}>",
+                                            "Source": "<{Penalty.Issuer.Name}>",
                                             "FontName": "{FIAFont}",
                                             "Foreground" : "{FIAText}",                                     
                                             "FontSize": "{FIAFontSize}",
@@ -59,7 +59,7 @@
                                                 {
                                                     "Condition" : "<{Penalty.Team.Name, Converter=EmptyObjectToTrue}>",
                                                     "Property" : "Source",
-                                                    "Value" : "[FIATheStewards] {Season.LeagueInfo.LeagueName}"
+                                                    "Value" : "[The Stewards]"
                                                 },
                                             ]
                                         },
