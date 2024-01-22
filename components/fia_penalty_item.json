@@ -497,7 +497,7 @@
                                             {
                                                 "BlockType": "text",
                                                 "MaxWidth": 600,                    
-                                                "Source": "(<{Penalty.PenaltyActionValue}>)",
+                                                "Source": "<{Penalty.PenaltyActionValue}>",
                                                 "RenderIf" : "<{Penalty.PenaltyActionValue, Converter=NumberIsNotZero}>",
                                                 "HorizontalAlignment": "Left",
                                                 "VerticalAlignment": "Center",
